@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/pagination.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagination.js"></script>
+
+<script language="javascript" type="text/javascript">
+	$(document).ready(function() {
+		//加入分页的绑定 
+		$("#Pagination").pagination(200, {
+			callback : pageselectCallback,
+			items_per_page : 10,
+			num_display_entries : 5,
+			current_page : 0,
+			num_edge_entries : 0
+		});
+	});
+	//这个事件是在翻页时候用的 
+	function pageselectCallback(page_id, jq) {
+		alert(page_id);
+	}
+</script>
+<title>Pagination</title>
+</head>
+<body>
+	<div id="Pagination" class="pagination"></div>
+</body>
+</html>
